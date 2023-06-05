@@ -1,0 +1,96 @@
+.incuwise-logo-final-14 {
+  position: absolute;
+  top: 42px;
+  left: 28px;
+  width: 83px;
+  height: 85px;
+  object-fit: cover;
+}
+.contact4,
+.whats-our-secret {
+  position: absolute;
+  display: inline-block;
+}
+.contact4 {
+  top: 68px;
+  left: 1572px;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: Poppins;
+  width: 123px;
+  height: 33px;
+}
+.whats-our-secret {
+  top: 250px;
+    left: 166px;
+    font-size: 127px;
+    font-weight: 800;
+    width: 1645px;
+    height: 82px;
+}
+.div2,
+.div3,
+.our-people,
+.our-process {
+  position: absolute;
+  top: 442px;
+  left:520px;
+  font-weight: 650;
+  display: inline-block;
+  width: 811px;
+  height: 87px;
+
+}
+.div2,
+.div3,
+.our-people {
+  top: 829px;
+  width: 811px;
+}
+.div2,
+.div3 {
+  top: 492px;
+  left: 343px;
+  font-size: 253px;
+  color: rgba(255, 255, 255, 0.6);
+  width: 135px;
+  height: 214px;
+}
+.div3 {
+  top: 772px;
+}
+.we-bet-on {
+  margin: 0;
+}
+.all-stakeholders-and-container,
+.we-bet-on-container {
+  position: absolute;
+ font-size: 24px;
+    font-weight: 500;
+    font-family: Poppins;
+    display: inline-block;
+    width: 958px;
+    height: 246px;
+}
+.all-stakeholders-and-container {
+  top: 893px;
+}
+.incuwise-logo-final-24 {
+  position: absolute;
+  top: 42px;
+  left: 729px;
+  width: 462px;
+  height: 108px;
+  object-fit: cover;
+}
+.landing-114 {
+  position: relative;
+  background-color: #000;
+  width: 100%;
+  height: 1300px;
+ overflow: scroll;
+  text-align: left;
+  font-size: 116px;
+  color: #fff;
+  font-family: 'Poppins';
+}
