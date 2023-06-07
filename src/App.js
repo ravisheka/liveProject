@@ -11,18 +11,20 @@ const PHASE_1 = 300;
 const PHASE_2 = 900;
 const PHASE_3 = 1100;
 
-
 function App() {
   const heroRef = useRef(null);
   const navRef = useRef(null);
   const [displayText, setDisplayText] = useState("WE");
   const [showImage, setShowImage] = useState(false);
+  const [showBackground, setShowBackground] = useState(true);
+
   const [phases, setPhases] = useState([
     { component: Rectangle1, show: false },
     { component: Rectangle2, show: false },
     { component: Rectangle3, show: false },
     { component: Rectangle4, show: false },
-   
+    { component: Phase3, show: false },
+    { component: Phase4, show: false },
   ]);
 
   function handleScroll() {
@@ -36,12 +38,16 @@ function App() {
     if (scrollPosition > 0) {
       const percentDecrease = scrollPosition / 10;
       const newWidth = currentWidth - percentDecrease;
-
+      if (scrollPosition < PHASE_1) {
+        setShowBackground(true);
+      } else {
+        setShowBackground(false);
+      }
       if (scrollPosition <= PHASE_1) {
         if (scrollPosition < 100) {
           setDisplayText("we");
         }
-        if (scrollPosition > 100 && scrollPosition < 200) {
+        if (scrollPosition > 80 && scrollPosition < 200) {
           heroRef.current.style.width = `${Math.max(newWidth, 50)}%`;
           heroRef.current.style.height = `100vh`;
           setDisplayText("are");
@@ -51,7 +57,6 @@ function App() {
           heroRef.current.style.height = `${newHeight}vh`;
           setDisplayText("incuwise");
         }
-        
       }
 
       // ----------------------------------------------- PHASE 1 ENDS -----------------------------------------------
@@ -83,7 +88,7 @@ function App() {
               currentWidth + scrollPosition * 0.06
             }px`;
           }
-          if (scrollPosition > 500) {
+          if (scrollPosition > 550) {
             setShowImage(true);
           } else {
             setShowImage(false);
@@ -142,22 +147,33 @@ function App() {
               index === 3 ? { ...phase, show: false } : phase
             )
           );
-          
+          setPhases((prevPhases) =>
+            prevPhases.map((phase, index) =>
+              index === 4 ? { ...phase, show: true } : phase
+            )
+          );
         }
-        heroRef.current.style.border="none";
+        heroRef.current.style.border = "none";
       }
-      
-   
-      
-     
+      if (scrollPosition > PHASE_3) {
+        setPhases((prevPhases) =>
+          prevPhases.map((phase, index) =>
+            index === 4 ? { ...phase, show: false } : phase
+          )
+        );
+        setPhases((prevPhases) =>
+          prevPhases.map((phase, index) =>
+            index === 5 ? { ...phase, show: true } : phase
+          )
+        );
+      }
     } else {
       heroRef.current.style.background = "#1d428a";
       heroRef.current.style.width = "100%";
       heroRef.current.style.height = "100vh";
     }
-   
-  } 
- 
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
@@ -170,7 +186,7 @@ function App() {
   return (
     <>
       <div className="container" ref={navRef}>
-        <div className="nav-menu" >
+        <div className="nav-menu">
           <img
             className="nav-logo"
             src="incuwise-logo-final-11@2x.png"
@@ -187,6 +203,7 @@ function App() {
             inset: "0",
             fontFamily: "Poppins",
             border: "2px solid #1d428a",
+            backgroundColor: showBackground ? "#1d428a" : "transparent",
           }}
         >
           <div className="hero-content">
@@ -233,14 +250,10 @@ function App() {
               />
             ) : null
           )}
-         
         </div>
-      
       </div>
-      <Phase3/>
-      <Phase4/>
-      <Phase5/>
-     
+
+      <Phase5 />
     </>
   );
 }

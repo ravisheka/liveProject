@@ -14,13 +14,13 @@ function Phase4() {
 
   return (
     <div className="landing-115">
-     <img
+     {/* <img
         class="incuwise-logo-final-14"
         alt=""
         src="incuwise-logo-final-11@2x.png"
       />
 
-      <div class="contact4" id="contactText">Contact</div>
+      <div class="contact4" id="contactText">Contact</div> */}
       <i className="got-an-idea1">GOT AN IDEA?</i>
       <div
         className={`lets-talk1 ${isHovered ? "hovered" : ""}`}

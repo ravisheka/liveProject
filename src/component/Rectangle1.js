@@ -17,7 +17,17 @@ function Rectangle1() {
   }, []);
 
   useEffect(() => {
-    divRef.current.style.height = `${scrollPosition * 0.1}px`;
+    const maxScroll = 600;
+    const minHeight = 80;
+    const maxHeight = 500;
+
+    const height =
+      scrollPosition >= maxScroll
+        ? minHeight
+        : minHeight +
+          ((scrollPosition / maxScroll) * (maxHeight - minHeight));
+
+    divRef.current.style.height = `${height}px`;
   }, [scrollPosition]);
 
   return (
@@ -263,7 +273,7 @@ function Rectangle1() {
           style={{
             top: "30%",
             left: "40%",
-            marginTop: scrollPosition >= 400 ? "-100px" : "10px",
+            marginTop: scrollPosition >= 600 ? "-100px" : "10px",
             transform: "translate(-50%, -50%)",
             fontFamily:'Poppins'
           }}
@@ -296,7 +306,7 @@ function Rectangle1() {
             style={{
               left: "-10rem",
               marginTop: "-4rem",
-              height: `${scrollPosition * 0.1}px`,
+              height: `${scrollPosition * 0.65}px`,
               transition: "height 0.5s ease",
             }}
             ref={divRef}

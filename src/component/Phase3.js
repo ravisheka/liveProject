@@ -12,21 +12,26 @@ const Phase3 = () => {
       <div class="contact4">Contact</div> */}
       <div class="whats-our-secret">WHAT’S OUR SECRET?</div>
       <div class="our-process"  style={{
-          top: "45%",
-          left: "56%",
+          top: "25%",
+          left: "44%",
           transform: "translate(-50%, -50%)",
+          fontFamily:"Poppins",
+          fontSize:"80px"
         }} >OUR PROCESS</div>
       <div class="our-people" style={{
-          top: "77%",
-          left: "56%",
+          top: "55%",
+          left: "44%",
           transform: "translate(-50%, -50%)",
+          fontFamily:"Poppins",
+          fontSize:"80px"
         }}>OUR PEOPLE</div>
       <div class="div2">1</div>
-      <div class="div3" style={{top:"70%"}}>2</div>
+      <div class="div3" style={{top:"50%"}}>2</div>
       <div class="we-bet-on-container" style={{
-          top: "64%",
-          left: "62%",
+          top: "50%",
+          left: "48%",
           transform: "translate(-50%, -50%)",
+          fontSize:"16px"
         }}>
         <p class="we-bet-on">
           We bet on the future, We evaluate what could you become in the next 5
@@ -42,9 +47,10 @@ const Phase3 = () => {
         </p>
       </div>
       <div class="all-stakeholders-and-container" style={{
-          top: "96%",
-          left: "62%",
+          top: "79%",
+          left: "48%",
           transform: "translate(-50%, -50%)",
+          fontSize:"16px"
         }}>
         <p class="we-bet-on">
           All stakeholders and no 9-5 paper pushers, thatʼs what makes our team
@@ -62,7 +68,7 @@ const Phase3 = () => {
         </p>
         <p class="we-bet-on">
           excellence which is put very well in our teams collective motto
-          “Chaseperfection, catch excellence and see the success follow”
+          “Chaseperfection, 
         </p>
       </div>
      

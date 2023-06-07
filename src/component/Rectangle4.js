@@ -17,9 +17,18 @@ const Rectangle4 = () => {
   }, []);
 
   useEffect(() => {
-    divRef.current.style.height = `${scrollPosition * 0.1}px`;
-  }, [scrollPosition]);
+    const maxScroll = 600;
+    const minHeight = 80;
+    const maxHeight = 500;
 
+    const height =
+      scrollPosition >= maxScroll
+        ? minHeight
+        : minHeight +
+          ((scrollPosition / maxScroll) * (maxHeight - minHeight));
+
+    divRef.current.style.height = `${height}px`;
+  }, [scrollPosition]);
   return (
     <div class="landing-109">
       <img class="vector-icon16" alt="" src="vector4.svg" />
@@ -77,7 +86,7 @@ const Rectangle4 = () => {
         style={{
           top: "50%",
           left: "50%",
-          marginTop: scrollPosition >= 400 ? "-100px" : "10px",
+          marginTop: scrollPosition >= 600 ? "-100px" : "10px",
           transform: "translate(-50%, -50%)",
           fontFamily:"Poppins"
         }}
@@ -107,7 +116,7 @@ const Rectangle4 = () => {
           style={{
             marginLeft: "-10rem",
             marginTop: "-4rem",
-            height: `${scrollPosition * 0.1}px`,
+            height: `${scrollPosition * 0.65}px`,
             transition: "height 0.5s ease",
           }}
           ref={divRef}

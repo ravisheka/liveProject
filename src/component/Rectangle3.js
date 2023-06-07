@@ -18,7 +18,17 @@ const Rectangle3 = () => {
   }, []);
 
   useEffect(() => {
-    divRef.current.style.height = `${scrollPosition * 0.1}px`;
+    const maxScroll = 600;
+    const minHeight = 80;
+    const maxHeight = 500;
+
+    const height =
+      scrollPosition >= maxScroll
+        ? minHeight
+        : minHeight +
+          ((scrollPosition / maxScroll) * (maxHeight - minHeight));
+
+    divRef.current.style.height = `${height}px`;
   }, [scrollPosition]);
 
   return (
@@ -40,7 +50,7 @@ const Rectangle3 = () => {
         style={{
           top: "40%",
           left: "50%",
-          marginTop: scrollPosition >= 400 ? "-100px" : "10px",
+          marginTop: scrollPosition >= 600 ? "-100px" : "10px",
           transform: "translate(-50%, -50%)",
           fontFamily:"Poppins"
         }}

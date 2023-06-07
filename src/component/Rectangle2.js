@@ -18,12 +18,22 @@ function Rectangle2() {
   }, []);
 
   useEffect(() => {
-    divRef.current.style.height = `${scrollPosition * 0.1}px`;
+    const maxScroll = 600;
+    const minHeight = 80;
+    const maxHeight = 500;
+
+    const height =
+      scrollPosition >= maxScroll
+        ? minHeight
+        : minHeight +
+          ((scrollPosition / maxScroll) * (maxHeight - minHeight));
+
+    divRef.current.style.height = `${height}px`;
   }, [scrollPosition]);
 
   return (
-    <div className="landing-97">
-      <img
+   <div className="landing-97">
+       <img
         className="landing-97-child"
         alt=""
         src="rectangle-11@2x.png"
@@ -39,7 +49,7 @@ function Rectangle2() {
           top: "40%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          marginTop: scrollPosition >= 400 ? "-100px" : "10px",
+          marginTop: scrollPosition >= 600 ? "-100px" : "10px",
           transition: "margin-top 0.5s ease",
         }}
       >
