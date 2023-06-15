@@ -32,7 +32,7 @@
   .we-help-you9 {
     font-size: 143px;
     font-weight: 800;
-    font-family:" Poppins";
+    font-family: adobe-clean, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-align: center;
     width: 893px;
     height: 263px;
@@ -62,14 +62,15 @@
   .group-child17 {
     background-color: #fff;
     height: 77px;
-    animation: mymove  5s 1;
+  }
+    /* animation: mymove  5s 1;
   animation-timing-function: linear;
 }
 
 @keyframes mymove {
   from { height: 0px;}
-  to {  height: 520px;}
-} 
+  to {  height: 480px;}
+}  */
   .rectangle-parent6 {
     position: absolute;
     top: 189px;
@@ -94,7 +95,8 @@
     text-align: left;
     font-size: 30px;
     color: #fff;
-    font-family: "Poppins";
+    /* font-family: "Poppins"; */
+    font-family: adobe-clean, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin-top: -7.99rem;
     margin-left: -42rem;
   }

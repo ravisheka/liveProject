@@ -5,11 +5,11 @@ import Rectangle3 from "./component/Rectangle3";
 import Rectangle4 from "./component/Rectangle4";
 import Phase3 from "./component/Phase3";
 import Phase4 from "./component/Phase4";
-import Phase5 from "./component/Phase5";
+
 
 const PHASE_1 = 300;
-const PHASE_2 = 900;
-const PHASE_3 = 1100;
+const PHASE_2 = 1000;
+const PHASE_3 = 1300;
 
 function App() {
   const heroRef = useRef(null);
@@ -48,13 +48,15 @@ function App() {
           setDisplayText("we");
         }
         if (scrollPosition > 80 && scrollPosition < 200) {
-          heroRef.current.style.width = `${Math.max(newWidth, 50)}%`;
+          heroRef.current.style.width = `${Math.max(newWidth, 75)}%`;
           heroRef.current.style.height = `100vh`;
           setDisplayText("are");
         }
         if (scrollPosition >= 200) {
-          const newHeight = Math.max(newWidth, 50);
+          const newHeight = Math.max(newWidth, 78);
+          heroRef.current.style.width = `${Math.max(newWidth, 75)}%`;
           heroRef.current.style.height = `${newHeight}vh`;
+          
           setDisplayText("incuwise");
         }
       }
@@ -93,15 +95,21 @@ function App() {
           } else {
             setShowImage(false);
           }
-          if (scrollPosition > 600) {
+          if (scrollPosition > 700) {
             setShowImage(false);
             setPhases((prevPhases) =>
               prevPhases.map((phase, index) =>
                 index === 0 ? { ...phase, show: true } : phase
               )
             );
+          }else{
+            setPhases((prevPhases) =>
+              prevPhases.map((phase, index) =>
+                index === 0 ? { ...phase, show: false } : phase
+              )
+            );
           }
-          if (scrollPosition > 680) {
+          if (scrollPosition > 880) {
             setPhases((prevPhases) =>
               prevPhases.map((phase, index) =>
                 index === 0 ? { ...phase, show: false } : phase
@@ -112,8 +120,14 @@ function App() {
                 index === 1 ? { ...phase, show: true } : phase
               )
             );
+          }else{
+            setPhases((prevPhases) =>
+            prevPhases.map((phase, index) =>
+              index === 1 ? { ...phase, show: false } : phase
+            )
+          );
           }
-          if (scrollPosition > 780) {
+          if (scrollPosition > 930) {
             setPhases((prevPhases) =>
               prevPhases.map((phase, index) =>
                 index === 1 ? { ...phase, show: false } : phase
@@ -124,8 +138,14 @@ function App() {
                 index === 2 ? { ...phase, show: true } : phase
               )
             );
+          }else{
+            setPhases((prevPhases) =>
+            prevPhases.map((phase, index) =>
+              index === 2 ? { ...phase, show: false } : phase
+            )
+          );
           }
-          if (scrollPosition > 880) {
+          if (scrollPosition > 980) {
             setPhases((prevPhases) =>
               prevPhases.map((phase, index) =>
                 index === 2 ? { ...phase, show: false } : phase
@@ -136,12 +156,18 @@ function App() {
                 index === 3 ? { ...phase, show: true } : phase
               )
             );
+          }else{
+            setPhases((prevPhases) =>
+            prevPhases.map((phase, index) =>
+              index === 3 ? { ...phase, show: false } : phase
+            )
+          );
           }
         }
       }
       // ----------------------------------------------- PHASE 2 ENDS -----------------------------------------------
       if (scrollPosition > PHASE_2 && scrollPosition <= PHASE_3) {
-        if (scrollPosition > 980) {
+        if (scrollPosition > 1040) {
           setPhases((prevPhases) =>
             prevPhases.map((phase, index) =>
               index === 3 ? { ...phase, show: false } : phase
@@ -152,10 +178,17 @@ function App() {
               index === 4 ? { ...phase, show: true } : phase
             )
           );
+        }else{
+          setPhases((prevPhases) =>
+          prevPhases.map((phase, index) =>
+            index === 4 ? { ...phase, show: false } : phase
+          )
+        );
         }
         heroRef.current.style.border = "none";
       }
       if (scrollPosition > PHASE_3) {
+        if(scrollPosition>1080){
         setPhases((prevPhases) =>
           prevPhases.map((phase, index) =>
             index === 4 ? { ...phase, show: false } : phase
@@ -167,6 +200,7 @@ function App() {
           )
         );
       }
+    }
     } else {
       heroRef.current.style.background = "#1d428a";
       heroRef.current.style.width = "100%";
@@ -252,8 +286,7 @@ function App() {
           )}
         </div>
       </div>
-
-      <Phase5 />
+     
     </>
   );
 }

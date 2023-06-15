@@ -5,7 +5,7 @@ function Phase5() {
   return (
     <div className="landing-118 scrollable">
       <img
-        style={{ marginLeft: "0.1rem" }}
+        style={{ marginLeft: "7rem" }}
         className="incuwise-logo-final-1"
         alt=""
         src="incuwise-logo-final-1@2x.png"

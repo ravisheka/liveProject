@@ -75,7 +75,8 @@ body{
 .group-child37 {
   background-color: #fff;
   height: 77px;
-
+}
+/* 
     animation: mymove  5s 1;
   animation-timing-function: linear;
 }
@@ -83,7 +84,7 @@ body{
 @keyframes mymove {
   from { height: 0px;}
   to {  height: 430px;}
-}  
+}   */
 .rectangle-parent16 {
   position: absolute;
   top: 189px;

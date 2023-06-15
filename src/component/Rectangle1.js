@@ -16,20 +16,28 @@ function Rectangle1() {
     };
   }, []);
 
-  useEffect(() => {
-    const maxScroll = 600;
-    const minHeight = 80;
-    const maxHeight = 500;
-
-    const height =
-      scrollPosition >= maxScroll
-        ? minHeight
-        : minHeight +
-          ((scrollPosition / maxScroll) * (maxHeight - minHeight));
-
-    divRef.current.style.height = `${height}px`;
-  }, [scrollPosition]);
-
+  // useEffect(() => {
+  //   const minHeight = 50; // Minimum height for group-child37
+  //   const maxHeight = 500; // Maximum height for group-child37
+  //   const startScroll = 200; // Scroll position where the height starts increasing
+  //   const endScroll = 800; // Scroll position where the height reaches the maximum
+  
+  //   let height;
+  //   if (scrollPosition <= startScroll) {
+  //     height = minHeight;
+  //   } else if (scrollPosition >= endScroll) {
+  //     height = maxHeight;
+  //   } else {
+  //     const scrollRange = endScroll - startScroll;
+  //     const heightRange = maxHeight - minHeight;
+  //     const scrolledAmount = scrollPosition - startScroll;
+  //     const heightIncrease = (scrolledAmount / scrollRange) * heightRange;
+  //     height = minHeight + heightIncrease;
+  //   }
+  
+  //   divRef.current.style.height = `${height}px`;
+  // }, [scrollPosition]);
+  
   return (
     <div>
       <div className="landing-91">
@@ -275,6 +283,7 @@ function Rectangle1() {
             left: "40%",
             marginTop: scrollPosition >= 600 ? "-100px" : "10px",
             transform: "translate(-50%, -50%)",
+            transition: "margin-top 0.5s ease",
             fontFamily:'Poppins'
           }}
         >
@@ -304,11 +313,11 @@ function Rectangle1() {
           <div
             className="group-child37"
             style={{
-              left: "-10rem",
-              marginTop: "-4rem",
-              height: `${scrollPosition * 0.65}px`,
-              transition: "height 0.5s ease",
-            }}
+            left: "-10rem",
+            marginTop: "-4rem",
+            height: `${scrollPosition * 0.6}px`,
+            transition: "height 0.5s ease",
+          }}
             ref={divRef}
           ></div>
         </div>

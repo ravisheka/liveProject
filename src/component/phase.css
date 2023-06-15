@@ -313,15 +313,16 @@ body{
   }
   .group-child7 {
     background-color: #fff;
-    height: 77px;
-    animation: mymove  5s 1;
+    height: 100px;
+  }
+    /* animation: mymove  5s 1;
   animation-timing-function: linear;
 }
 
 @keyframes mymove {
-  from { height: 0px;}
+  from { height: 60px;}
   to {  height: 430px;}
-} 
+}  */
   .rectangle-parent1 {
     position: absolute;
     top: 189px;

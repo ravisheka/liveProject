@@ -85,10 +85,11 @@
   object-fit: cover;
 }
 .landing-114 {
-  position: relative;
+  position: absolute;
   background-color: #000;
   width: 140vw;
   height: 100vh;
+  overflow-y: scroll;
   font-size: 30px;
   color: #fff;
   font-family:" Poppins";

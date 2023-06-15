@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./phase.css";
+
 const Rectangle4 = () => {
   const divRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -16,22 +17,37 @@ const Rectangle4 = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const maxScroll = 600;
-    const minHeight = 80;
-    const maxHeight = 500;
+  // useEffect(() => {
+  //   const scrollPositions = [200, 400, 800]; // Scroll positions where the height changes
+  //   const heights = [0, 50, 200, 360, 500]; // Corresponding heights for each scroll position
 
-    const height =
-      scrollPosition >= maxScroll
-        ? minHeight
-        : minHeight +
-          ((scrollPosition / maxScroll) * (maxHeight - minHeight));
+  //   let height;
+  //   if (scrollPosition <= scrollPositions[0]) {
+  //     height = heights[0];
+  //   } else if (scrollPosition >= scrollPositions[scrollPositions.length - 1]) {
+  //     height = heights[heights.length - 1];
+  //   } else {
+  //     for (let i = 0; i < scrollPositions.length - 1; i++) {
+  //       if (
+  //         scrollPosition >= scrollPositions[i] &&
+  //         scrollPosition < scrollPositions[i + 1]
+  //       ) {
+  //         const scrollRange = scrollPositions[i + 1] - scrollPositions[i];
+  //         const heightRange = heights[i + 1] - heights[i];
+  //         const scrolledAmount = scrollPosition - scrollPositions[i];
+  //         const heightIncrease = (scrolledAmount / scrollRange) * heightRange;
+  //         height = heights[i] + heightIncrease;
+  //         break;
+  //       }
+  //     }
+  //   }
 
-    divRef.current.style.height = `${height}px`;
-  }, [scrollPosition]);
+  //   divRef.current.style.height = `${height}px`;
+  // }, [scrollPosition]);
+
   return (
-    <div class="landing-109">
-      <img class="vector-icon16" alt="" src="vector4.svg" />
+    <div className="landing-109">
+    <img class="vector-icon16" alt="" src="vector4.svg" />
 
       <div class="landing-109-child"></div>
 
@@ -88,6 +104,7 @@ const Rectangle4 = () => {
           left: "50%",
           marginTop: scrollPosition >= 600 ? "-100px" : "10px",
           transform: "translate(-50%, -50%)",
+           transition: "margin-top 0.5s ease",
           fontFamily:"Poppins"
         }}
       >
@@ -106,17 +123,17 @@ const Rectangle4 = () => {
         stages of your startup and catapult your business to the next level
         through our network of 2000+ VC firms and Angel Investors.
       </div>
-      <div class="rectangle-parent1">
+      <div className="rectangle-parent1">
         <div
-          class="group-child6"
-          style={{ marginLeft: "-10rem", height: "460px", marginTop: "--4rem" }}
+          className="group-child6"
+          style={{ marginLeft: "-10rem", height: "460px", marginTop: "-4rem" }}
         ></div>
         <div
-          class="group-child7"
+          className="group-child7"
           style={{
             marginLeft: "-10rem",
             marginTop: "-4rem",
-            height: `${scrollPosition * 0.65}px`,
+            height: `${scrollPosition * 0.5}px`,
             transition: "height 0.5s ease",
           }}
           ref={divRef}

@@ -17,23 +17,28 @@ const Rectangle3 = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const maxScroll = 600;
-    const minHeight = 80;
-    const maxHeight = 500;
+  // useEffect(() => {
+  //   const scrollPoints = [0, 600, 1200, 1800, 2400]; // Scroll positions where height changes
+  //   const heightPoints = [0, 50, 200, 360, 500]; // Corresponding height values for each scroll position
 
-    const height =
-      scrollPosition >= maxScroll
-        ? minHeight
-        : minHeight +
-          ((scrollPosition / maxScroll) * (maxHeight - minHeight));
+  //   let height = 0;
+  //   for (let i = 1; i < scrollPoints.length; i++) {
+  //     if (scrollPosition >= scrollPoints[i - 1] && scrollPosition < scrollPoints[i]) {
+  //       const scrollRange = scrollPoints[i] - scrollPoints[i - 1];
+  //       const heightRange = heightPoints[i] - heightPoints[i - 1];
+  //       const scrolledAmount = scrollPosition - scrollPoints[i - 1];
+  //       const heightIncrease = (scrolledAmount / scrollRange) * heightRange;
+  //       height = heightPoints[i - 1] + heightIncrease;
+  //       break;
+  //     }
+  //   }
 
-    divRef.current.style.height = `${height}px`;
-  }, [scrollPosition]);
+  //   divRef.current.style.height = `${height}px`;
+  // }, [scrollPosition]);
 
   return (
     <div class="landing-102">
-      <img
+    <img
         class="landing-102-child"
         alt=""
         src="rectangle-1@2x.png"
@@ -52,7 +57,8 @@ const Rectangle3 = () => {
           left: "50%",
           marginTop: scrollPosition >= 600 ? "-100px" : "10px",
           transform: "translate(-50%, -50%)",
-          fontFamily:"Poppins"
+          fontFamily:"Poppins",
+          transition: "margin-top 0.5s ease",
         }}
       >
         WE HELP YOU SCALE
@@ -77,9 +83,9 @@ const Rectangle3 = () => {
         <div
           class="group-child17"
           style={{
-            marginLeft: "-10rem",
+            left: "-10rem",
             marginTop: "-4rem",
-            height: `${scrollPosition * 0.65}px`,
+            height: `${scrollPosition * 0.52}px`,
             transition: "height 0.5s ease",
           }}
           ref={divRef}
